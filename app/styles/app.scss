@@ -1,0 +1,51 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.thumbnail{
+
+  h3{
+    text-align: center;
+  }
+}
+
+.caption{
+
+  .price{
+    display: inline-block;
+  }
+  a{
+    float: right;
+  }
+}
+
+.cart-title{
+
+  h3{
+    text-align: center;
+  }
+}
+
+.cart-total{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.checkout-btn{
+  float: right;
+}
