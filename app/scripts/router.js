@@ -1,9 +1,28 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Backbone = require('backbone');
 
-var MenuContainer = require('./components/main.jsx').MenuContainer;
+var menuModel = require('./models/menu.js')
+var menuItem = require('./components/menu.json')
 
-ReactDOM.render(
-  React.createElement(MenuContainer),
-  document.getElementById('app')
-);
+var MenuContainer = require('./components/menu.jsx').MenuContainer;
+
+var AppRouter  = Backbone.Router.extend({
+  routes: {
+    '': 'menu'
+  },
+  initialize: function(){
+    this.menuItems = new menuModel.MenuCollection(menuItem);
+    console.log("router initialize", this.menuItems)
+  },
+  menu: function(){
+    ReactDOM.render(
+      React.createElement(MenuContainer, {router: this}),
+      document.getElementById('app')
+    )
+  }
+});
+
+var appRouter = new AppRouter();
+
+module.exports = appRouter

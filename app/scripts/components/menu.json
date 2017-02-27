@@ -1,0 +1,82 @@
+[
+  {
+    "id": 50,
+    "item": "Samuri Roll",
+    "description": "spicy crab, avocado, and cream cheese on the inside, topped with salmon sashimi",
+    "price": 10,
+    "image": "http://www.sushiolympia.com/images/photos/sushi%20plates/lacey-sushi-roll.jpg",
+    "category": "sushi"
+  },
+
+  {
+    "id": 51,
+    "item": "Catepillar Roll",
+    "description": "spicy crab, shrimp tempura, cream cheese, topped with thin slices of avocado",
+    "price": 18,
+    "image": "http://www.saltshaker.net/wp-content/walkerparkcaterpillar.jpg",
+    "category": "sushi"
+  },
+
+  {
+    "id": 52,
+    "item": "Rainbow Roll",
+    "description": "crab, avocado, cucumber, topped with tuna, salmon, white fish, and avocado",
+    "price": 9,
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/52/4b/61/524b616841b45535f49b98fe85353eea.jpg",
+    "category": "sushi"
+  },
+
+  {
+    "id": 53,
+    "item": "California Roll",
+    "description": "crab, avocado, cucumber, topped with masago",
+    "price": 6,
+    "image": "http://cdn.shopify.com/s/files/1/0250/3642/files/bigstock-California-Maki-Sushi-with-Mas-39517885_grande.jpg?3909",
+    "category": "sushi"
+  },
+
+  {
+    "id": 54,
+    "item": "Red Dragon Roll",
+    "description": "spicy crab, shrimp tempura, avocado, cream cheese, topped with tuna sashimi",
+    "price": 18,
+    "image": "http://www.utah-sushi-roll.com/wp-content/uploads/2014/02/jack-roll-tona-sushi-roll-utah-624x624.jpg",
+    "category": "sushi"
+  },
+
+  {
+    "id": 55,
+    "item": "Filet Mignon",
+    "description": "8oz filet mignon served with sauted vegetables and a baked potato",
+    "price": 25,
+    "image": "http://cf.ltkcdn.net/cooking/images/std/202907-675x450-filetmignon.jpg",
+    "category": "entree"
+  },
+
+  {
+    "id": 56,
+    "item": "Newyork Strip",
+    "description": "12oz newyork strip, served with sauted vegetables and baked potatoe",
+    "price": 20,
+    "image": "http://cdn.shopify.com/s/files/1/0702/3225/products/New-York-strip-ser.jpeg?v=1462910008",
+    "category": "entree"
+  },
+
+  {
+    "id": 57,
+    "item": "Baked Salmon",
+    "description": "6oz salmon baked, served with sauted vegetables and steamed rice",
+    "price": 18,
+    "image": "http://www.realgoodfish.com/files/baked-salmon_56639.jpg",
+    "category": "entree"
+  },
+
+  {
+    "id": 58,
+    "item": "Grilled Tuna",
+    "description": "ahi grade tuna, grilled to perfection, served with sauted vegetables and steamed rice",
+    "price": 20,
+    "image": "https://d1doqjmisr497k.cloudfront.net/~/media/Recipe-Photos/McCormick/Main-Dishes/1007x545/Caribbean-Grilled-Tuna.ashx?vd=20130326T191735Z&hash=CE4C3182F937D443C5DED1EEEE672201DF4E4637",
+    "category": "entree"
+  },
+]
