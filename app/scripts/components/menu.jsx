@@ -1,23 +1,26 @@
-
 var React = require('react');
 var Backbone = require('backbone');
 
 var models = require('../models/menu.js');
 var menuItems = require('../components/menu.json');
 
-
+var CartComponent = require('./cart.jsx').CartComponent;
 
 var MenuContainer = React.createClass({
   getInitialState: function(){
     console.log("menucontainer getInitial state menuItems", menuItems)
     return {
       menuItems: this.props.router.menuItems,
+      order: []
     }
   },
   componentWillMount: function(){
     menuItems = this.props.router.menuItems;
   },
-
+  addToCart: function(item){
+    this.state.order.push(item);
+    this.setState({order: this.state.order});
+  },
   render: function(){
 
     var categories = menuItems.groupBy(function(data){
@@ -49,9 +52,9 @@ var MenuContainer = React.createClass({
         </div>
 
           <div className="row">
-            <SushiListComponent sushiList= {sushi} />
-            <EntreeListComponent entreeList= {entree}/>
-            <CartItems />
+            <SushiListComponent sushiList= {sushi} addToCart={this.addToCart} />
+            <EntreeListComponent entreeList= {entree} addToCart={this.addToCart} />
+            <CartComponent cartList={this.state.order} />
           </div>
         </div>
     )
@@ -59,7 +62,12 @@ var MenuContainer = React.createClass({
 });
 
 var SushiListComponent = React.createClass({
+  handleClick: function(item){
+    this.props.addToCart(item);
+  },
   render: function(){
+    var self = this;
+
     var sushiRolls = this.props.sushiList.map(function(data){
 
       return (
@@ -69,7 +77,7 @@ var SushiListComponent = React.createClass({
               <div className="caption">
                 <p className="description">{data.get('description')}</p>
                 <p className="price">{data.get('price').toFixed(2)}</p>
-                <a href="#" className="btn btn-primary add-item-btn" role="button">
+                <a onClick={function(){self.handleClick(data)}} href="#" className="btn btn-primary add-item-btn" role="button">
                   Add to Cart
                 </a>
               </div>
@@ -86,17 +94,22 @@ var SushiListComponent = React.createClass({
 });
 
 var EntreeListComponent = React.createClass({
+  handleClick: function(item){
+    this.props.addToCart(item);
+  },
   render: function(){
+    var self = this;
+
     var entrees = this.props.entreeList.map(function(data){
 
     return (
-        <div key={data.id} className="thumbnail">
+        <div key={data.cid} className="thumbnail">
           <h3>{data.get('item')}</h3>
           <img src={data.get('image')} alt="..." />
           <div className="caption">
             <p className="description">{data.get('description')}</p>
             <p className="price">{data.get('price').toFixed(2)}</p>
-            <a href="#" className="btn btn-primary add-item-btn" role="button">
+            <a onClick={function(){self.handleClick(data)}} href="#" className="btn btn-primary add-item-btn" role="button">
               Add to Cart
             </a>
           </div>
@@ -111,28 +124,6 @@ var EntreeListComponent = React.createClass({
     )
   }
 });
-
-var CartItems = React.createClass({
-  render: function(){
-
-    return(
-      <div className="col-sm-hidden col-md-4 thumbnail">
-        <div className="cart-title">
-          <h3>cart title</h3>
-        </div>
-        <ul className="selected-items">
-          <li>selected items</li>
-        </ul>
-          <div className="cart-total">
-            <span>Subtotal:</span> <span>Amount</span>
-          </div>
-          <a href="#" className="btn btn-primary checkout-btn" role="button">
-            Checkout
-          </a>
-      </div>
-    )
-  }
-})
 
 module.exports = {
   MenuContainer: MenuContainer
